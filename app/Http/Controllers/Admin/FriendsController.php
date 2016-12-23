@@ -86,8 +86,8 @@ class FriendsController extends Controller {
         $friend->url = Input::get('url');
         $friend->order = Input::get('order');
 
-        if ($article->save()) {
-            return Redirect::to('admin/articles');
+        if ($friend->save()) {
+            return Redirect::to('admin/friends');
         } else {
             return Redirect::back()->withInput()->withErrors('保存失败');
         }
