@@ -15,6 +15,12 @@ class CreateSettingsTable extends Migration {
 		Schema::create('settings', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('webName')->comment('网站名称');
+			$table->string('webUrl')->comment('网站URL');
+			$table->string('webDescription')->nullable()->comment('网站描述');
+			$table->string('keywords')->nullable()->comment('网站关键词');
+			$table->string('icpNo')->nullable()->comment('网站ICP编号');
+			$table->string('copyRights')->nullable()->comment('版权信息');
 			$table->timestamps();
 		});
 	}
