@@ -25,6 +25,7 @@ Route::post('articles/store', 'ArticlesController@store');
 
 Route::get('friends/{id}', 'FriendsController@show');
 
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'], function()
 {
 	Route::get('/', 'AdminHomeController@index');
@@ -32,5 +33,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
 	Route::resource('comments', 'CommentsController');
 	Route::resource('articles', 'ArticlesController');
 	Route::resource('friends', 'FriendsController');
-	Route::resource('setting', 'SettingController');
+	
+	
+	Route::resource('settings', 'SettingsController');
+	Route::post('settings/update', 'SettingsController@update');
 });

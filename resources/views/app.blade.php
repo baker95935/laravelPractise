@@ -37,7 +37,7 @@
           <li><a href="/admin/friends">管理友情链接</a></li>
         </ul>
          <ul class="nav navbar-nav">
-          <li><a href="/admin/setting">网站设置</a></li>
+          <li><a href="/admin/settings">网站设置</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
