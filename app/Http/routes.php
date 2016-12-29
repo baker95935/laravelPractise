@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
 	Route::resource('comments', 'CommentsController');
 	Route::resource('articles', 'ArticlesController');
 	Route::resource('friends', 'FriendsController');
+	Route::resource('users', 'UsersController');
 	
 	
 	Route::resource('settings', 'SettingsController');
