@@ -33,7 +33,7 @@
                 {{ $comment->email }}
               </td>
               <td class="col-lg-4">
-                <a href="{{ URL('comments/'.$comment->page_id) }}" target="_blank">
+                <a href="{{ URL('articles/'.$comment->page_id) }}" target="_blank">
                   {{ App\Page::find($comment->page_id)->title }}1
                 </a>
               </td>
@@ -50,7 +50,7 @@
             </tr>
           @endforeach
         </table>
-
+<?php echo $comments->render(); ?>
 
         </div>
       </div>

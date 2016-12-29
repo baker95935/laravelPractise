@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">新增article</div>
+        <div class="panel-heading">新增文章</div>
 
         <div class="panel-body">
 
@@ -26,7 +26,7 @@
             <br>
             <textarea name="body" rows="10" class="form-control" required="required"></textarea>
             <br>
-            <button class="btn btn-lg btn-info">新增article</button>
+            <button class="btn btn-lg btn-info">新增文章</button>
           </form>
 
         </div>

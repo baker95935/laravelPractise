@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
  
 use Redirect,Input;
+ 
 
 class UsersController extends Controller {
 
@@ -17,7 +18,7 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-		return view('admin.users.index')->withUsers(User::all());
+		return view('admin.users.index')->withUsers(User::paginate(8));
 	}
 
 	/**

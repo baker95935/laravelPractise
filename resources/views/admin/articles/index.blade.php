@@ -23,8 +23,7 @@
                 {{ $article->body }}
               </td>
               <td class="col-lg-2">
-                    <h4>{{ $article->title }}</h4>
-                  </a>
+                    {{ $article->title }}
               </td>
               <td class="col-lg-4">
                 <a href="{{ URL('articles/'.$article->id) }}" target="_blank">
@@ -45,7 +44,7 @@
           @endforeach
         </table>
 
-
+<?php echo $articles->render(); ?>
         </div>
       </div>
     </div>

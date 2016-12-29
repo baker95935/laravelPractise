@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">编辑 article</div>
+        <div class="panel-heading">编辑文章</div>
 
         <div class="panel-body">
 
@@ -27,7 +27,7 @@
             <br>
             <textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
             <br>
-            <button class="btn btn-lg btn-info">编辑 articles</button>
+            <button class="btn btn-lg btn-info">编辑文章</button>
           </form>
 
         </div>

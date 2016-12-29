@@ -42,7 +42,8 @@
             </tr>
           @endforeach
         </table>
-
+        
+<?php echo $users->render(); ?>
 
         </div>
       </div>

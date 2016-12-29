@@ -13,8 +13,8 @@ use App\Article;
 class ArticlesController extends Controller {
 
 	public function index()
-	{
-		return view('admin.articles.index')->withArticles(Article::all());
+	{ 
+		return view('admin.articles.index')->withArticles(Article::paginate(8));
 	}
     /**
      * Show the form for creating a new resource.

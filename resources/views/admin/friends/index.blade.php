@@ -35,14 +35,14 @@
                 <form action="{{ URL('admin/friends/'.$friend->id) }}" method="POST" style="display: inline;">
                   <input name="_method" type="hidden" value="DELETE">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <button type="submit" class="btn btn-danger">删除</button>
+                  <button onclick="javascript:return confirm('确定要删除吗')" type="submit" class="btn btn-danger">删除</button>
                 </form>
               </td>
             </tr>
           @endforeach
         </table>
 
-
+<?php echo $friends->render(); ?>
         </div>
       </div>
     </div>

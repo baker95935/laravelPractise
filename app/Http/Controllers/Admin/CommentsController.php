@@ -13,7 +13,7 @@ class CommentsController extends Controller {
 
   public function index()
   {
-    return view('admin.comments.index')->withComments(Comment::all());
+    return view('admin.comments.index')->withComments(Comment::paginate(8));
   }
 
   public function edit($id)

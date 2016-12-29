@@ -18,8 +18,8 @@ class FriendsController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
-		return view('admin.friends.index')->withFriends(Friend::all());
+	{ 
+		return view('admin.friends.index')->withFriends(Friend::paginate(8));
 	}
 
 	/**
