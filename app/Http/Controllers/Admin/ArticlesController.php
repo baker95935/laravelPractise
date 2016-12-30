@@ -36,11 +36,16 @@ class ArticlesController extends Controller {
         $this->validate($request, [
             'title' => 'required|unique:pages|max:255',
             'body' => 'required',
+        	'coverPic'=>'image',
         ]);
 
         $article = new Article;
         $article->title = Input::get('title');
         $article->body = Input::get('body');
+        $artcile->coverPic=Input::file('coverPic');
+        var_dump($artcile->coverPic);exit;
+         
+        
         $article->user_id = 1;//Auth::user()->id;
 
         if ($article->save()) {
