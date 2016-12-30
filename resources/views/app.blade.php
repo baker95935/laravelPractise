@@ -34,6 +34,9 @@
           <li><a href="/admin/articles">管理文章</a></li>
         </ul>
         <ul class="nav navbar-nav">
+          <li><a href="/admin/types">管理文章分类</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
           <li><a href="/admin/users">管理会员</a></li>
         </ul>
          <ul class="nav navbar-nav">
