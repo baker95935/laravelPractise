@@ -20,11 +20,21 @@
             </div>
           @endif
 
-          <form action="{{ URL('admin/articles') }}" method="POST">
+          <form action="{{ URL('admin/articles') }}" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="text" name="title" class="form-control" required="required">
+            文章标题：<input type="text" name="title" class="form-control" required="required">
             <br>
-            <textarea name="body" rows="10" class="form-control" required="required"></textarea>
+            文章类别:
+            <select name="typeId" id="typeId">
+            @foreach($types as $type)
+            	<option value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+            </select>
+            <br>
+            <br>
+            文章封面：<input type="file" name="coverPic" id="coverPic">
+            <br>
+            文章内容： <textarea name="body" rows="10" class="form-control" required="required"></textarea>
             <br>
             <button class="btn btn-lg btn-info">新增文章</button>
           </form>

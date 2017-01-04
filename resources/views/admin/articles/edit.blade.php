@@ -20,12 +20,26 @@
             </div>
           @endif
 
-          <form action="{{ URL('admin/articles/'.$article->id) }}" method="POST">
+          <form action="{{ URL('admin/articles/'.$article->id) }}" enctype="multipart/form-data" method="POST">
             <input name="_method" type="hidden" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="text" name="title" class="form-control" required="required" value="{{ $article->title }}">
+            文章标题：<input type="text" name="title" class="form-control" required="required" value="{{ $article->title }}">
             <br>
-            <textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
+                     文章类别:
+            <select name="typeId" id="typeId">
+            @foreach($types as $type)
+            	<option value="{{$type->id}}" @if($type->id==$article->typeId) selected="selected" @endif >{{$type->name}}</option>
+            @endforeach
+            </select>
+            <br>
+            <br>
+            文章封面：@if($article->coverPic)
+              <img src="/{{ $article->coverPic}}" width="100px" height="100px">
+              @endif
+              <br><br>
+      重新上传: <input type="file" name="coverPic" id="coverPic">
+             <br>
+     文章内容：<textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
             <br>
             <button class="btn btn-lg btn-info">编辑文章</button>
           </form>

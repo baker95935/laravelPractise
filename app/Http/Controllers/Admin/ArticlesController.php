@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Redirect, Input;
 
 use App\Article;
+use App\Type;
 
 
 class ArticlesController extends Controller {
@@ -23,7 +24,7 @@ class ArticlesController extends Controller {
      */
     public function create()
     {
-        return view('admin.articles.create');
+        return view('admin.articles.create')->withTypes(Type::all());
     }
 
     /**
@@ -34,19 +35,25 @@ class ArticlesController extends Controller {
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique:pages|max:255',
+            'title' => 'required|unique:articles|max:255',
             'body' => 'required',
         	'coverPic'=>'image',
+        	'typeId'=>'required'
         ]);
 
         $article = new Article;
         $article->title = Input::get('title');
         $article->body = Input::get('body');
-        $artcile->coverPic=Input::file('coverPic');
-        var_dump($artcile->coverPic);exit;
-         
+        $article->typeId = Input::get('typeId');
         
-        $article->user_id = 1;//Auth::user()->id;
+        $file = Input::file('coverPic');
+        if($file -> isValid()){
+        	$newName=date('Ymdhis').rand(0,5).'.'.$file->getClientOriginalExtension();//命名
+        	$path = $file->move('uploads/articles/',$newName);//上传
+        	!empty($path->getPathName()) && $article->coverPic=$path->getPathName();//获取路径
+        }
+ 
+        $article->user_id = 1;
 
         if ($article->save()) {
             return Redirect::to('admin/articles');
@@ -64,7 +71,9 @@ class ArticlesController extends Controller {
      */
     public function edit($id)
     {
-        return view('admin.articles.edit')->withArticle(Article::find($id));
+    	$article=Article::find($id);
+    	$types=Type::all();
+        return view('admin.articles.edit',compact('article','types'));
     }
 
     /**
@@ -76,7 +85,7 @@ class ArticlesController extends Controller {
     public function update(Request $request,$id)
     {
         $this->validate($request, [
-            'title' => 'required|unique:pages,title,'.$id.'|max:255',
+            'title' => 'required|unique:articles,title,'.$id.'|max:255',
             'body' => 'required',
         ]);
 
@@ -84,7 +93,18 @@ class ArticlesController extends Controller {
         $article->title = Input::get('title');
         $article->body = Input::get('body');
         $article->user_id = 1;//Auth::user()->id;
-
+		
+        $article->typeId = Input::get('typeId');
+        
+        $file = Input::file('coverPic');
+        if(!empty($file)) {
+	        if($file -> isValid()){
+	        	$newName=date('Ymdhis').rand(0,5).'.'.$file->getClientOriginalExtension();//命名
+	        	$path = $file->move('uploads/articles/',$newName);//上传
+	        	!empty($path->getPathName()) && $article->coverPic=$path->getPathName();//获取路径
+	        }
+        }
+        
         if ($article->save()) {
             return Redirect::to('admin/articles');
         } else {
