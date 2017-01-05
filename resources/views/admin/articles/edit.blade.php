@@ -50,3 +50,14 @@
   </div>
 </div>  
 @endsection
+
+<script charset="utf-8" src="/kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/kindeditor/lang/zh_CN.js"></script>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('textarea[name="body"]', {
+		allowFileManager : true
+	});
+});
+</script>

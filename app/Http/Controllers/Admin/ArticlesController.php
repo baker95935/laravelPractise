@@ -9,7 +9,7 @@ use Redirect, Input;
 
 use App\Article;
 use App\Type;
-
+use Auth;
 
 class ArticlesController extends Controller {
 
@@ -53,7 +53,7 @@ class ArticlesController extends Controller {
         	!empty($path->getPathName()) && $article->coverPic=$path->getPathName();//获取路径
         }
  
-        $article->user_id = 1;
+        $article->user_id = Auth::user()->id;
 
         if ($article->save()) {
             return Redirect::to('admin/articles');
@@ -92,7 +92,7 @@ class ArticlesController extends Controller {
         $article = Article::find($id);
         $article->title = Input::get('title');
         $article->body = Input::get('body');
-        $article->user_id = 1;//Auth::user()->id;
+        $article->user_id = Auth::user()->id;
 		
         $article->typeId = Input::get('typeId');
         

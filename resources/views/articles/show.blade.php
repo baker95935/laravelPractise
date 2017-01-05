@@ -12,7 +12,7 @@
   </div>
   <div id="content" style="padding: 50px;">
     <p>
-      {{ $article->body }}
+      {!! $article->body !!}
     </p>
   </div>
   <div id="comments" style="margin-bottom: 100px;">
