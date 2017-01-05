@@ -24,17 +24,29 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">邮箱</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">密码</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								<input type="password" class="form-control" name="password" required>
 							</div>
 						</div>
-
+						<div class="form-group">
+							<label class="col-md-4 control-label">验证码</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="captcha" required>
+							</div>
+						</div>
+ 						<div class="form-group">
+ 							<label class="col-md-4 control-label"> </label>
+							<div class="col-md-6">
+ 								<a href="#" onClick="create_code()">
+ 								<IMG id="code" SRC="{!! SimpleCaptcha::img() !!}" alt="看不清楚，换一张"></a>
+ 							</div>
+ 						</div>
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
@@ -59,3 +71,9 @@
 	</div>
 </div>
 @endsection
+
+<script>
+function create_code(){
+    document.getElementById('code').src = '/captcha?'+Math.random()*10000;
+}
+</script>
