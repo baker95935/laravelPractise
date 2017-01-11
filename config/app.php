@@ -146,6 +146,8 @@ return [
 		'App\Providers\RouteServiceProvider',
 		
 		'DeveloperTz\SimpleCaptcha\SimpleCaptchaServiceProvider',
+		
+		'App\Providers\WebSettingServiceProvider',//网站后台全局读取网站名称
 
 	],
 
@@ -196,6 +198,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		
 		'SimpleCaptcha'      => 'DeveloperTz\SimpleCaptcha\Facades\SimpleCaptcha',
+		'WebSetting'=>'App\Providers\WebSettingServiceProvider',//网站设置全局都会加载，设置自动加载
 
 	],
 
