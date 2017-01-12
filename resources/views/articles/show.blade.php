@@ -1,90 +1,70 @@
-@extends('_layouts.default')
-
-@section('content')
-  <h4>
-    <a href="/">⬅️返回首页</a>
-  </h4>
-
-  <h1 style="text-align: center; margin-top: 50px;">{{ $article->title }}</h1>
-  <hr>
-  <div id="date" style="text-align: right;">
-    {{ $article->updated_at }}
-  </div>
-  <div id="content" style="padding: 50px;">
-    <p>
-      {!! $article->body !!}
-    </p>
-  </div>
-  <div id="comments" style="margin-bottom: 100px;">
-
-    @if (count($errors) > 0)
-      <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
-
-    <div id="new">
-      <form action="{{ URL('comment/store') }}" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <input type="hidden" name="page_id" value="{{ $article->id }}">
-        <div class="form-group">
-          <label>昵称</label>
-          <input type="text" name="nickname" class="form-control" style="width: 300px;" required="required">
-        </div>
-        <div class="form-group">
-          <label>邮箱</label>
-          <input type="email" name="email" class="form-control" style="width: 300px;">
-        </div>
-        <div class="form-group">
-          <label>个人主页</label>
-          <input type="text" name="website" class="form-control" style="width: 300px;">
-        </div>
-        <div class="form-group">
-          <label>内容</label>
-          <textarea name="content" id="newFormContent" class="form-control" rows="10" required="required"></textarea>
-        </div>
-        <button type="submit" class="btn btn-lg btn-success col-lg-12">发布</button>
-      </form>
-    </div>
-
-<script>  
-function reply(a) {  
-  var nickname = a.parentNode.parentNode.firstChild.nextSibling.getAttribute('data');
-  var textArea = document.getElementById('newFormContent');
-  textArea.innerHTML = '@'+nickname+' ';
-}
-</script>
-
-    <div class="conmments" style="margin-top: 100px;">
-      @foreach ($article->hasManyComments as $comment)
-
-        <div class="one" style="border-top: solid 20px #efefef; padding: 5px 20px;">
-          <div class="nickname" data="{{ $comment->nickname }}">
-          @if ($comment->website)
-            <a href="{{ $comment->website }}">
-              <h3>{{ $comment->nickname }}</h3>
-            </a>
-          @else
-            <h3>{{ $comment->nickname }}</h3>
-          @endif
-            <h6>{{ $comment->created_at }}</h6>
-          </div>
-          <div class="content">
-            <p style="padding: 20px;">
-              {{ $comment->content }}
-            </p>
-          </div>
-          <div class="reply" style="text-align: right; padding: 5px;">
-            <a href="#new" onclick="reply(this);">回复</a>
-          </div>
-        </div>
-
-      @endforeach
-    </div>
-  </div>
-@endsection
+@include('def')
+@include('common.header')	 
+<!-- single -->
+	<div class="single">
+		<div class="container">
+			<div class="single-page-artical">
+				<div class="artical-content">
+					<h3>Lorem Ipsum is simply dummy text</h3>
+					<img class="img-responsive" src="images/banner1.jpg" alt=" " />
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="artical-links">
+					<ul>
+						<li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>September 27,2015</li>
+						<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>admin</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>No comments</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>View posts</a></li>
+						<li><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>permalink</li>
+					</ul>
+				</div>
+				<div class="comment-grid-top">
+					<h3>Responses</h3>
+					<div class="comments-top-top">
+						<div class="top-comment-left">
+							<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
+						</div>
+						<div class="top-comment-right">
+							<ul>
+								<li><span class="left-at"><a href="#">Admin</a></span></li>
+								<li><span class="right-at">September 29, 2015 at 10.30am</span></li>
+								<li><a class="reply" href="#">Reply</a></li>
+							</ul>
+						<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="comments-top-top top-grid-comment">
+						<div class="top-comment-left">
+							<a href="#"><img class="img-responsive" src="images/co.png" alt=""></a>
+						</div>
+						<div class="top-comment-right">
+							<ul>
+								<li><span class="left-at"><a href="#">Admin</a></li>
+								<li><span class="right-at">September 31, 2015 at 10.30am</span></li>
+								<li><a class="reply" href="#">Reply</a></li>
+							</ul>
+						<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>			
+				<div class="artical-commentbox">
+					<h3>leave a comment</h3>
+					<div class="table-form">
+						<form>
+							<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+							<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+							<input type="text" value="Phone number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone number';}">
+							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>	
+							<input type="submit" value="Send">
+						</form>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+<!-- single -->
+@include('common.footer')

@@ -12,18 +12,24 @@
 */
 
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'IndexController@index');
+
+Route::get('index/about', 'IndexController@about');
+Route::get('strategy', 'StrategyController@index');
+Route::get('note', 'NoteController@index');
+Route::get('blog', 'BlogController@index');
+Route::get('image', 'ImageController@index');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');  
 Route::post('auth/login', 'Auth\AuthController@postLogin');  
 Route::get('auth/logout', 'Auth\AuthController@getLogout'); 
-Route::get('pages/{id}', 'PagesController@show');
+ 
 Route::post('comment/store', 'CommentsController@store');
 
 Route::get('articles/{id}', 'ArticlesController@show');
 Route::post('articles/store', 'ArticlesController@store');
 
-Route::get('friends/{id}', 'FriendsController@show');
+ 
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'], function()

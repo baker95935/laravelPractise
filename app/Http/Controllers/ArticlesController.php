@@ -20,5 +20,18 @@ class ArticlesController extends Controller {
 		return view('articles.show')->withArticle(Article::find($id));
 	}
 
-	 
+	public function note()
+	{
+		return view('articles.note');
+	}
+	
+	public function blog()
+	{
+		return view('articles.blog');
+	}
+	
+	public function strategy()
+	{
+		return view('articles.strategy');
+	}
 }
