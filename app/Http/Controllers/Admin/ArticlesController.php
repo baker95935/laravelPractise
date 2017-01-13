@@ -37,7 +37,6 @@ class ArticlesController extends Controller {
         $this->validate($request, [
             'title' => 'required|unique:articles|max:255',
             'body' => 'required',
-        	'coverPic'=>'image',
         	'typeId'=>'required'
         ]);
 
@@ -45,14 +44,7 @@ class ArticlesController extends Controller {
         $article->title = Input::get('title');
         $article->body = Input::get('body');
         $article->typeId = Input::get('typeId');
-        
-        $file = Input::file('coverPic');
-        if($file -> isValid()){
-        	$newName=date('Ymdhis').rand(0,5).'.'.$file->getClientOriginalExtension();//命名
-        	$path = $file->move('uploads/articles/',$newName);//上传
-        	!empty($path->getPathName()) && $article->coverPic=$path->getPathName();//获取路径
-        }
- 
+        $article->coverPic= Input::get('coverPic');
         $article->user_id = Auth::user()->id;
 
         if ($article->save()) {
@@ -93,17 +85,9 @@ class ArticlesController extends Controller {
         $article->title = Input::get('title');
         $article->body = Input::get('body');
         $article->user_id = Auth::user()->id;
-		
+        $article->coverPic= Input::get('coverPic');
         $article->typeId = Input::get('typeId');
         
-        $file = Input::file('coverPic');
-        if(!empty($file)) {
-	        if($file -> isValid()){
-	        	$newName=date('Ymdhis').rand(0,5).'.'.$file->getClientOriginalExtension();//命名
-	        	$path = $file->move('uploads/articles/',$newName);//上传
-	        	!empty($path->getPathName()) && $article->coverPic=$path->getPathName();//获取路径
-	        }
-        }
         
         if ($article->save()) {
             return Redirect::to('admin/articles');

@@ -40,20 +40,12 @@
 				
 			</nav>
 			<div class="logo">
-				<a href="index.html">Your Trip<span>Alaska Mountains</span></a>
+				<a href="index.html">你的旅行<span>台儿庄古城，微山湖湿地，冠世榴园，抱犊崮国家森林公园，台儿庄大战纪念馆</span></a>
 			</div>
 			<div class="dummy_text">
-				<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-					adipisci velit, sed quia non numquam eius modi.</p>
+				<p>很多事情就像是旅行一样，当你做出决定并迈出第一步的时候，最困难的那部分其实就已经完成了。</p>
 			</div>
-			<div class="social_icons">
-				<ul>
-					<li><a href="#" class="p"></a></li>
-					<li><a href="#" class="facebook"></a></li>
-					<li><a href="#" class="g"></a></li>
-					<li><a href="#" class="instagram"></a></li>
-				</ul>
-			</div>
+ 
 		</div>
 	</div>
 <!-- //banner -->

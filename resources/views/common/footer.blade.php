@@ -26,7 +26,7 @@
 	</div>
 <!-- //contact -->
 <!-- here stars scrolling icon -->
-	<script type="text/javascript">
+<script type="text/javascript">
 		$(document).ready(function() {
 			/*
 				var defaults = {
@@ -43,7 +43,7 @@
 	</script>
 <!-- //here ends scrolling icon -->
 <!-- for bootstrap working -->
-	<script src=""{{ asset('/js/bootstrap.js') }}></script>
+<script src="{{ asset('/js/bootstrap.js') }}"></script>
 <!-- //for bootstrap working -->
 </body>
 </html>

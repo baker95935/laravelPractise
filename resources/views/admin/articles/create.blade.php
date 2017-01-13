@@ -32,7 +32,9 @@
             </select>
             <br>
             <br>
-            文章封面：<input type="file" name="coverPic" id="coverPic">
+            文章封面：<input name="coverPic" type="hidden" id="coverPic" value="" />
+              <input type="button"  id="imgK" value="选择图片">
+              <img id="imgDir" src="" width="100px" width="100px" style="display:none">
             <br>
             文章内容： <textarea name="body" rows="10" class="form-control"></textarea>
             <br>
@@ -53,6 +55,19 @@ var editor;
 KindEditor.ready(function(K) {
 	editor = K.create('textarea[name="body"]', {
 		allowFileManager : true
+	});
+	K('#imgK').click(function() {
+		editor.loadPlugin('image', function() {
+			editor.plugin.imageDialog({
+				imageUrl : K('#coverPic').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#coverPic').val(url);
+					$('#imgDir').attr('src',url);
+					$('#imgDir').show();
+					editor.hideDialog();
+				}
+			});
+		});
 	});
 });
 </script>

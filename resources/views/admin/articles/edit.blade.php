@@ -34,10 +34,10 @@
             <br>
             <br>
             文章封面：@if($article->coverPic)
-              <img src="/{{ $article->coverPic}}" width="100px" height="100px">
+              <img id="imgDir" src="{{ $article->coverPic}}" width="100px" height="100px">
               @endif
-              <br><br>
-      重新上传: <input type="file" name="coverPic" id="coverPic">
+      		<input type="hidden" name="coverPic" id="coverPic" value="{{$article->coverPic}}" />
+            <input type="button"  id="imgK" value="重新上传">
              <br>
      文章内容：<textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
             <br>
@@ -58,6 +58,19 @@ var editor;
 KindEditor.ready(function(K) {
 	editor = K.create('textarea[name="body"]', {
 		allowFileManager : true
+	});
+	K('#imgK').click(function() {
+		editor.loadPlugin('image', function() {
+			editor.plugin.imageDialog({
+				imageUrl : K('#coverPic').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#coverPic').val(url);
+					$('#imgDir').attr('src',url);
+					$('#imgDir').show();
+					editor.hideDialog();
+				}
+			});
+		});
 	});
 });
 </script>
