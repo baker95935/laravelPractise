@@ -1,26 +1,26 @@
 <!-- contact -->
 	<div class="contact" id="contact">
 		<div class="container">
-			<h3>Contact Us</h3>
+			<h3>联系我们</h3>
 			<div class="col-md-4 contact-grid">
 				<i class="glyphicon glyphicon-home" aria-hidden="true"></i>
-				<h4>Address</h4>
-				<p>JI.Paulnadwam 2nd D.No:23-50-903.<span>United States</span></p>
+				<h4>地点</h4>
+				<p>台儿庄古城<span>中国枣庄</span></p>
 			</div>
 			<div class="col-md-4 contact-grid">
 				<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
 				<h4>Mail</h4>
-				<a href="mailto:info@example.com">info@example.com</a>
+				<a href="mailto:baker95935@qq.com">baker95935@qq.com</a>
 			</div>
 			<div class="col-md-4 contact-grid">
 				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
-				<h4>Phone</h4>
-				<p>+020 456 9696</p>
+				<h4>QQ群</h4>
+				<p>14839966</p>
 			</div>
 			<div class="clearfix"> </div>
 			<!-- footer -->
 			<div class="footer-copy">
-				<p>Copyright &copy; 2016.Company name All rights reserved.</p>
+				<p>{{$settings->copyRights}} {{$settings->icpNo}}</p>
 			</div>
 		</div>
 	</div>

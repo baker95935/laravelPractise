@@ -7,15 +7,16 @@ class IndexController extends Controller {
 	//首页
   public function index()
   {
-  	
-    return view('index');
+  	$nav='index';
+    return view('index')->with('nav',$nav);
   }
   
   
   //关于我们
   public function about()
   {
-  	return view('about');
+  	$nav='about';
+  	return view('about')->with('nav',$nav);
   }
 
 }

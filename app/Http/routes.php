@@ -15,9 +15,6 @@
 Route::get('/', 'IndexController@index');
 
 Route::get('index/about', 'IndexController@about');
-Route::get('strategy', 'StrategyController@index');
-Route::get('note', 'NoteController@index');
-Route::get('blog', 'BlogController@index');
 Route::get('image', 'ImageController@index');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');  
@@ -26,11 +23,10 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
  
 Route::post('comment/store', 'CommentsController@store');
 
-Route::get('articles/{id}', 'ArticlesController@show');
-Route::post('articles/store', 'ArticlesController@store');
-
- 
-
+Route::get('articles/show/{id}', 'ArticlesController@show');
+Route::get('articles/strategy', 'ArticlesController@strategy');
+Route::get('articles/note', 'ArticlesController@note');
+Route::get('articles/blog', 'ArticlesController@blog');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'], function()
 {

@@ -22,16 +22,19 @@ class ArticlesController extends Controller {
 
 	public function note()
 	{
-		return view('articles.note');
+		$nav='note';
+		return view('articles.note')->withNav($nav);
 	}
 	
 	public function blog()
 	{
-		return view('articles.blog');
+		$nav='blog';
+		return view('articles.blog')->with('nav',$nav);
 	}
 	
 	public function strategy()
 	{
-		return view('articles.strategy');
+		$nav='strategy';
+		return view('articles.strategy')->with('nav',$nav);
 	}
 }

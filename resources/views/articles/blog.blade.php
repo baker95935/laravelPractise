@@ -7,7 +7,7 @@
 			<div class="blog-grids">
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/16.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>
@@ -22,7 +22,7 @@
 				</div>
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/17.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/17.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>
@@ -40,7 +40,7 @@
 			<div class="blog-grids">
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/18.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/18.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>
@@ -55,7 +55,7 @@
 				</div>
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/19.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/19.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>
@@ -73,7 +73,7 @@
 			<div class="blog-grids">
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/16.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>
@@ -88,7 +88,7 @@
 				</div>
 				<div class="col-md-6 blog-grid">
 					<div class="col-xs-4 blog-grid-left">
-						<a href="single.html"><img src="images/17.jpg" alt=" " class="img-responsive" /></a>
+						<a href="single.html"><img src="{{ asset('/images/17.jpg') }}" alt=" " class="img-responsive" /></a>
 					</div> 
 					<div class="col-xs-8 blog-grid-right">
 						<a href="single.html">sint occaecat cupidatat non proident</a>

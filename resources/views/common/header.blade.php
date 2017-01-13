@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="banner_top">
 				<div class="banner_top_left">
-					<p>I am travelling to <span>Alaska Mountains.</span></p>
+					<p>我正在去枣庄旅游的路上</p>
 				</div>
 				<div class="banner_top_right">
 					<form>
@@ -28,12 +28,12 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav cl-effect-14">
-						<li><a href="/" class="active">首页</a></li>
-						<li><a href="/index/about">关于</a></li>
-						<li><a href="/article/strategy">攻略</a></li>
-						<li><a href="/article/note">游记</a></li>
-						<li><a href="/image">图集</a></li>
-						<li><a href="/article/blog">博客</a></li>
+						<li><a href="/" @if($nav =='index') class="active" @endif>首页</a></li>
+						<li><a href="/index/about" @if($nav =='about') class="active" @endif>关于</a></li>
+						<li><a href="/articles/strategy" @if($nav =='strategy') class="active" @endif>攻略</a></li>
+						<li><a href="/articles/note" @if($nav =='note') class="active" @endif>游记</a></li>
+						<li><a href="/image" @if($nav =='image') class="active" @endif>图集</a></li>
+						<li><a href="/articles/blog" @if($nav =='blog') class="active" @endif>博客</a></li>
 						<li><a href="#contact" class="scroll">联系</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->	
