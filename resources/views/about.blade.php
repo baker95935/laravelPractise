@@ -7,13 +7,13 @@
 				<div class="col-md-6 about-grid-left">
 					<div class="grid">
 						<figure class="effect-julia">
-							<img src="images/15.jpg" alt="" class="img-responsive" />
+							<img src="{{ asset('/images/15.jpg') }}" alt="" class="img-responsive" />
 							<figcaption>
-								<h2>Shipping <span> Alaska</span></h2>
+								<h2>关于 <span> 我们</span></h2>
 								<div>
-									<p>Quo voluptas nulla pariatur.</p>
-									<p>Neque porro quisquam est, dolorem.</p>
-									<p>Aliquid ex ea consequatur.</p>
+									<p>枣庄本土化的资源优势++</p>
+									<p>网络专业化深耕网络多年</p>
+									<p>人员全国化全国的枣庄人都关注</p>
 								</div>
 								<a href="#">View more</a>
 							</figcaption>			
@@ -21,46 +21,35 @@
 					</div>
 				</div>
 				<div class="col-md-6 about-grid-right">
-					<h3>Nemo enim ipsam voluptatem quia voluptas sit</h3>
-					<p class="great">No one rejects, dislikes, or 
-						avoids pleasure itself, because it is pleasure.I will give you a complete account 
-							of the system, and expound the actual teachings of the great explorer of the 
-							truth, the master-builder of human happiness.</p>
-					<p>But I must explain to you how all this mistaken idea of denouncing 
-						pleasure and praising pain was born and I will give you a complete account 
-						of the system, and expound the actual teachings of the great explorer of the 
-						truth, the master-builder of human happiness. No one rejects, dislikes, or 
-						avoids pleasure itself, because it is pleasure.</p>
-					<div class="social_icons social_icons1">
-						<ul>
-							<li><a href="#" class="p"></a></li>
-							<li><a href="#" class="facebook"></a></li>
-							<li><a href="#" class="g"></a></li>
-							<li><a href="#" class="instagram"></a></li>
-						</ul>
-					</div>
+					<h3>关于本站</h3>
+					<p class="great">本站基于laravel5.0(国外最流行的PHP框架),站长练手的习作，同时对于枣庄旅游的前景表示乐观，
+					基于一颗爱好网络的心，基于一个对家乡热爱的情感，会持续更新下去。</p>
+					<p>站长，枣庄峄城人，目前北漂在首都。QQ群中有一帮爱好网络的朋友，欢迎热爱聊天的枣庄人加入我们
+					，加入我们的QQ群，我们走的是长线，走的是朋友，群里各行业牛人众多，欢迎枣庄网友加入。
+					QQ群号：14839966，<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=004472c67a72be87652a5b326ba4a9d75353b9c465785fe784abbbc8301bb78f">
+					<img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="枣庄论坛网友交流群①" title="枣庄论坛网友交流群①"></a></p>
+					 
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="my-trip">
 				<div class="wmuSlider example1">
 					<div class="wmuSliderWrapper">
+					
+						@foreach($myTeamList as $key=>$team)
 						<article style="position: absolute; width: 100%; opacity: 0;"> 
 							<div class="banner-wrap">
 								<div class="my-trip-grids">
 									<div class="col-xs-4 my-trip-left">
-										<h3>About <span>My</span> Trip. (Alaska)</h3>
+										<h3>关于 <span>我的</span>团队</h3>
 									</div>
 									<div class="col-xs-8 my-trip-right">
 										<div class="my-trip-rightl">
-											<img src="images/20.jpg" alt=" " class="img-responsive" />
+											<img src="{{$team->coverPic}}" alt=" " class="img-responsive" />
 										</div>
 										<div class="my-trip-rightr">
-											<p>To take a trivial example, which of us ever undertakes 
-												laborious physical exercise, except to obtain some advantage 
-												from it? But who has any right to find fault with a man who chooses 
-												to enjoy a pleasure that has no annoying consequences.
-												<span>Andrew Rich</span></p>
+											<p>{{$team->body}}
+												<span>{{$team->title}}</span></p>
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -68,55 +57,10 @@
 								</div>
 							</div>
 						</article>
-						<article style="position: absolute; width: 100%; opacity: 0;"> 
-							<div class="banner-wrap">
-								<div class="my-trip-grids">
-									<div class="col-xs-4 my-trip-left">
-										<h3>About <span>My</span> Trip. (Alaska)</h3>
-									</div>
-									<div class="col-xs-8 my-trip-right">
-										<div class="my-trip-rightl">
-											<img src="images/22.jpg" alt=" " class="img-responsive" />
-										</div>
-										<div class="my-trip-rightr">
-											<p>To take a trivial example, which of us ever undertakes 
-												laborious physical exercise, except to obtain some advantage 
-												from it? But who has any right to find fault with a man who chooses 
-												to enjoy a pleasure that has no annoying consequences.
-												<span>Laura James</span></p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-						</article>
-						<article style="position: absolute; width: 100%; opacity: 0;"> 
-							<div class="banner-wrap">
-								<div class="my-trip-grids">
-									<div class="col-xs-4 my-trip-left">
-										<h3>About <span>My</span> Trip. (Alaska)</h3>
-									</div>
-									<div class="col-xs-8 my-trip-right">
-										<div class="my-trip-rightl">
-											<img src="images/21.jpg" alt=" " class="img-responsive" />
-										</div>
-										<div class="my-trip-rightr">
-											<p>To take a trivial example, which of us ever undertakes 
-												laborious physical exercise, except to obtain some advantage 
-												from it? But who has any right to find fault with a man who chooses 
-												to enjoy a pleasure that has no annoying consequences.
-												<span>Micheal Smith</span></p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-						</article>
+		 			@endforeach
 					</div>
 				</div>
-					<script src="js/jquery.wmuSlider.js"></script> 
+					<script src="{{ asset('/js/jquery.wmuSlider.js') }}"></script> 
 					  <script>
 						$('.example1').wmuSlider();         
 					 </script> 
@@ -127,34 +71,35 @@
 <!-- testimonials -->
 	<div class="testimonials">
 		<div class="container">
-			<h3>Testimonials</h3>
+			<h3>管理核心</h3>
 			<div class="testimonials-grids">
+			
 				<div class="col-md-6 testimonials-grid">
 					<div class="col-md-8 testimonials-grd">
 						<div class="testimonials-grid1">
-							<h4>Laura James <span>Photographer</span></h4>
-							<p>Voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum 
-								fugiat quo voluptas nulla pariatur</p>
+							<h4>{{$teamLeaderOne->title}}<span>群管理员</span></h4>
+							<p>{{$teamLeaderOne->body}}</p>
 						</div>
 					</div>
 					<div class="col-md-4 testimonials-grd-right">
-						<img src="images/22.jpg" alt=" " class="img-responsive">
+						<img src="{{$teamLeaderOne->coverPic}}" alt=" " class="img-responsive">
 					</div>
 					<div class="clearfix"> </div>
 				</div>
+				
 				<div class="col-md-6 testimonials-grid">
 					<div class="col-md-4 testimonials-grd-right">
-						<img src="images/21.jpg" alt=" " class="img-responsive">
+						<img src="{{$teamLeaderTwo->coverPic}}" alt=" " class="img-responsive">
 					</div>
 					<div class="col-md-8 testimonials-grd">
 						<div class="testimonials-grid1 testimonials-grid1-second">
-							<h4>Micheal Smith <span>Photographer</span></h4>
-							<p>Voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum 
-								fugiat quo voluptas nulla pariatur</p>
+							<h4>{{$teamLeaderTwo->title}}<span>群管理员</span></h4>
+							<p>{{$teamLeaderTwo->body}}</p>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
+				
 				<div class="clearfix"> </div>
 			</div>
 		</div>

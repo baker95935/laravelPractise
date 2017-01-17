@@ -10,12 +10,13 @@ use Redirect, Input;
 use App\Article;
 use App\Type;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class ArticlesController extends Controller {
 
 	public function index()
 	{ 
-		return view('admin.articles.index')->withArticles(Article::paginate(8));
+		return view('admin.articles.index')->withArticles(DB::table('articles')->orderBy('id', 'desc')->paginate(8));
 	}
     /**
      * Show the form for creating a new resource.

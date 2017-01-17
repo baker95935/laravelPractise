@@ -4,16 +4,15 @@
 <!-- features -->
 	<div class="features">
 		<div class="container">
-			<h3>Special Features</h3>
+			<h3>枣庄特色景点</h3>
 			<div class="services-grids">
 				<div class="col-md-4 services-grid">
 					<div class="col-xs-2 services-grid-left">
 						<span class="glyphicon glyphicon-random" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-10 services-grid-right">
-						<h4>necessitatibus saepe</h4>
-						<p>Aut officiis debitis aut rerum necessitatibus saepe eveniet ut et 
-							voluptates repudiandae</p>
+						<h4>台儿庄古城</h4>
+						<p>台儿庄古城位于山东枣庄，古河道古码头，是一座东方水城，我国第</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -22,9 +21,8 @@
 						<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-10 services-grid-right">
-						<h4>necessitatibus saepe</h4>
-						<p>Aut officiis debitis aut rerum necessitatibus saepe eveniet ut et 
-							voluptates repudiandae</p>
+						<h4>微山湖红荷湿地</h4>
+						<p>环境很好，空气很新鲜，湿地不错，夏季荷花很漂亮，服务也很完善...</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -33,9 +31,8 @@
 						<span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-10 services-grid-right">
-						<h4>necessitatibus saepe</h4>
-						<p>Aut officiis debitis aut rerum necessitatibus saepe eveniet ut et 
-							voluptates repudiandae</p>
+						<h4>冠世榴园</h4>
+						<p>植被茂盛，空气质量不错。景区环境很好，景区较幽静，适合家人朋.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -45,88 +42,50 @@
 	</div>
 	<div class="featured-services">
 		<div class="container">
-			<h3>Offered Services</h3>
+			<h3>最新枣庄旅游攻略</h3>
 			<div class="featured-services-grids">
+			@foreach($lastestStrategy as $key=>$strategy)
 				<div class="col-md-3 featured-services-grid">
 					<div class="featured-services-grd">
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<h4>vel illum qui dolorem</h4>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor 
-							sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+						@if($key==0)<span class="glyphicon glyphicon-star" aria-hidden="true"></span>@endif
+						@if($key==1)<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>@endif
+						@if($key==2)<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>@endif
+						@if($key==3)<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>@endif
+						<h4>{{$strategy->title}}</h4>
+						<p>{{$strategy->body}}</p>
 						<div class="more m2">
-							<a class="btn effect6" href="single.html">Learn More</a>
+							<a class="btn effect6" href="/article/{{$strategy->id}}">查看详情</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 featured-services-grid">
-					<div class="featured-services-grd">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-						<h4>vel illum qui dolorem</h4>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor 
-							sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
-						<div class="more m2">
-							<a class="btn effect6" href="single.html">Learn More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 featured-services-grid">
-					<div class="featured-services-grd">
-						<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-						<h4>vel illum qui dolorem</h4>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor 
-							sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
-						<div class="more m2">
-							<a class="btn effect6" href="single.html">Learn More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 featured-services-grid">
-					<div class="featured-services-grd">
-						<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-						<h4>vel illum qui dolorem</h4>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor 
-							sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
-						<div class="more m2">
-							<a class="btn effect6" href="single.html">Learn More</a>
-						</div>
-					</div>
-				</div>
+			@endforeach
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	<div class="sevices-list">
 		<div class="container">
-			<h3>Features List</h3>
+			<h3>攻略列表</h3>
 			<div class="sevices-list-grids">
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
-						<li><a href="#">Reprehenderit in voluptate</a></li>
-						<li><a href="#">Aute irure dolor in</a></li>
-						<li><a href="#">Resultant pleasure</a></li>
-						<li><a href="#">Annoying consequences</a></li>
-						<li><a href="#">Trivial example</a></li>
-						<li><a href="#">Fugiat nulla pariatur</a></li>
+						@foreach($strategyLeftList as $key=>$note)
+						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
-						<li><a href="#">Resultant pleasure</a></li>
-						<li><a href="#">Annoying consequences</a></li>
-						<li><a href="#">Trivial example</a></li>
-						<li><a href="#">Fugiat nulla pariatur</a></li>
+						@foreach($strategyMiddleList as $key=>$note)
+						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
-						<li><a href="#">Reprehenderit in voluptate</a></li>
-						<li><a href="#">Aute irure dolor in</a></li>
-						<li><a href="#">Resultant pleasure</a></li>
-						<li><a href="#">Annoying consequences</a></li>
-						<li><a href="#">Trivial example</a></li>
-						<li><a href="#">Fugiat nulla pariatur</a></li>
-						<li><a href="#">Annoying consequences</a></li>
-						<li><a href="#">Trivial example</a></li>
+						@foreach($strategyRightList as $key=>$note)
+						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						@endforeach
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
