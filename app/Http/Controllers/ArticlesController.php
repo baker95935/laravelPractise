@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Article;
+use App\Comment;
+use Config;
 
 class ArticlesController extends Controller {
 
@@ -18,13 +20,19 @@ class ArticlesController extends Controller {
 	 */
 	public function show($id)
 	{
-		return view('articles.show')->withArticle(Article::find($id));
+		$article=Article::find($id);
+		$nav=getNavByTypeId($article->typeId);
+		
+		$comments=DB::table('comments')->where('page_id',$article->id)->orderBy('id', 'desc')->skip(0)->take(10)->get();
+		$commentsCount=DB::table('comments')->where('page_id',$article->id)->count();
+		
+		return view('articles.show',compact('nav','article','comments','commentsCount'));
 	}
 
 	//旅行日记
 	public function note()
 	{
-		$typeId=4;
+		$typeId=Config::get('constants.TYPEID_NOTE');
 		$nav='note';
 		
 		//最近日志
@@ -40,7 +48,7 @@ class ArticlesController extends Controller {
 	public function blog()
 	{
 		//博客
-		$typeId=5;
+		$typeId=Config::get('constants.TYPEID_BLOG');
 		$nav='blog';
 		
 		$blogList=DB::table('articles')->where('typeId',$typeId)->orderBy('id', 'desc')->paginate(6);
@@ -50,7 +58,7 @@ class ArticlesController extends Controller {
 	public function strategy()
 	{
 		$nav='strategy';
-		$typeId=3;
+		$typeId=Config::get('constants.TYPEID_STRATEGY');
 		
 		//最近日志
 		$lastestStrategy=DB::table('articles')->where('typeId',$typeId)->orderBy('id', 'desc')->skip(0)->take(4)->get();

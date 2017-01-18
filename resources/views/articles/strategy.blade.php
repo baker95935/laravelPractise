@@ -70,21 +70,21 @@
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($strategyLeftList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($strategyMiddleList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($strategyRightList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>

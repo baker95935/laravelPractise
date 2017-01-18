@@ -55,7 +55,7 @@
 						<h4>{{$note->title}}</h4>
 						<p>{{$note->body}}</p>
 						<div class="more m2">
-							<a class="btn effect6" href="/article/{{$note->id}}">Learn More</a>
+							<a class="btn effect6" href="/articles/show/{{$note->id}}">Learn More</a>
 						</div>
 					</div>
 				</div>
@@ -72,21 +72,21 @@
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($noteLeftList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($noteMiddleList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4 sevices-list-grid">
 					<ul>
 						@foreach($noteRightList as $key=>$note)
-						<li><a href="/article/{{$note->id}}">{{$note->title}}</a></li>
+						<li><a href="/articles/show/{{$note->id}}">{{$note->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
