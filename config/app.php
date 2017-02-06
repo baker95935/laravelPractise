@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://www.laravel5.cn',
+	'url' => 'http://www.632.com.cn',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -145,7 +145,6 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		
-		'DeveloperTz\SimpleCaptcha\SimpleCaptchaServiceProvider',
 		
 		'App\Providers\WebSettingServiceProvider',//网站后台全局读取网站名称
 
@@ -197,7 +196,6 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		
-		'SimpleCaptcha'      => 'DeveloperTz\SimpleCaptcha\Facades\SimpleCaptcha',
 		'WebSetting'=>'App\Providers\WebSettingServiceProvider',//网站设置全局都会加载，设置自动加载
 
 	],

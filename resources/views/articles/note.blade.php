@@ -55,7 +55,7 @@
 						<h4>{{$note->title}}</h4>
 						<p>{{$note->body}}</p>
 						<div class="more m2">
-							<a class="btn effect6" href="/articles/show/{{$note->id}}">Learn More</a>
+							<a class="btn effect6" href="/articles/show/{{$note->id}}">查看详情</a>
 						</div>
 					</div>
 				</div>

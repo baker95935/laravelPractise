@@ -26,7 +26,7 @@
                     {{ $article->title }}
               </td>
               <td class="col-lg-4">
-                <a href="{{ URL('articles/'.$article->id) }}" target="_blank">
+                <a href="{{ URL('articles/show/'.$article->id) }}" target="_blank">
                   {{ App\Article::find($article->id)->title }}
                 </a>
               </td>

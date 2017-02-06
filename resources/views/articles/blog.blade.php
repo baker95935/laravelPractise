@@ -20,7 +20,7 @@
 					</div>
 					<div class="clearfix"> </div>
 					<div class="more m1">
-						<a class="btn effect6" href="/articles/show/{{$blog->id}}">Learn More</a>
+						<a class="btn effect6" href="/articles/show/{{$blog->id}}">查看详情</a>
 					</div>
 				</div>
 			@if($key%2 == 1)
